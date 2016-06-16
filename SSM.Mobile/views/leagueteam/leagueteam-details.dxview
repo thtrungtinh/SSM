@@ -1,0 +1,56 @@
+<div data-options="dxView : { name: 'LeagueTeamDetails', title: 'League team' } " >
+    <div data-bind="dxCommand: { onExecute: '#LeagueTeamEdit/{id}', direction: 'none', id: 'edit', title: 'Edit', icon: 'edit' }"></div>
+    <div data-bind="dxCommand: { onExecute: handleDelete, id: 'delete', title: 'Delete', icon: 'remove' }"></div>
+    <div  data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-detail-view dx-content-background" data-bind="dxDeferRendering: { showLoadIndicator: true, staggerItemSelector: 'dx-fieldset-header,.dx-field', animation: 'detail-item-rendered', renderWhen: isReady }" >
+        <div data-bind="dxScrollView: { }">
+            <div class="dx-fieldset">
+                <div class="dx-fieldset-header" data-bind="text: leagueteam.GroupID"></div>
+				<div class="dx-field">
+					<div class="dx-field-label">League ID</div>
+					<div class="dx-field-value-static" data-bind="text: leagueteam.LeagueID"></div>
+				</div>
+				<div class="dx-field">
+					<div class="dx-field-label">Team ID</div>
+					<div class="dx-field-value-static" data-bind="text: leagueteam.TeamID"></div>
+				</div>
+				<div class="dx-field">
+					<div class="dx-field-label">Group ID</div>
+					<div class="dx-field-value-static" data-bind="text: leagueteam.GroupID"></div>
+				</div>
+				<div class="dx-field">
+					<div class="dx-field-label">Rank</div>
+					<div class="dx-field-value-static" data-bind="text: leagueteam.Rank"></div>
+				</div>
+				<div class="dx-field">
+					<div class="dx-field-label">Point</div>
+					<div class="dx-field-value-static" data-bind="text: leagueteam.Point"></div>
+				</div>
+				<div class="dx-field">
+					<div class="dx-field-label">Won</div>
+					<div class="dx-field-value-static" data-bind="text: leagueteam.Won"></div>
+				</div>
+				<div class="dx-field">
+					<div class="dx-field-label">Lost</div>
+					<div class="dx-field-value-static" data-bind="text: leagueteam.Lost"></div>
+				</div>
+				<div class="dx-field">
+					<div class="dx-field-label">Drawn</div>
+					<div class="dx-field-value-static" data-bind="text: leagueteam.Drawn"></div>
+				</div>
+				<div class="dx-field">
+					<div class="dx-field-label">Goal lost diff</div>
+					<div class="dx-field-value-static" data-bind="text: leagueteam.GoalLostDiff"></div>
+				</div>
+				<div class="dx-field">
+					<div class="dx-field-label">Goals scored</div>
+					<div class="dx-field-value-static" data-bind="text: leagueteam.GoalsScored"></div>
+				</div>
+				<div class="dx-field">
+					<div class="dx-field-label">Goal conceded</div>
+					<div class="dx-field-value-static" data-bind="text: leagueteam.GoalConceded"></div>
+				</div>
+			</div>
+            <div data-options="dxContentPlaceholder : { name: 'view-footer', animation: 'none' } " ></div>
+        </div>
+    </div>
+</div>

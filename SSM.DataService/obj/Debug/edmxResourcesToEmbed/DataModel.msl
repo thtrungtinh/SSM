@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SOCCER_SCHEDULEModelStoreContainer" CdmEntityContainer="SOCCER_SCHEDULEEntities">
+    <EntitySetMapping Name="Contents">
+      <EntityTypeMapping TypeName="SOCCER_SCHEDULEModel.Content">
+        <MappingFragment StoreEntitySet="Content">
+          <ScalarProperty Name="InfoID" ColumnName="InfoID" />
+          <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
+          <ScalarProperty Name="DateTo" ColumnName="DateTo" />
+          <ScalarProperty Name="KeyID" ColumnName="KeyID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Leagues">
+      <EntityTypeMapping TypeName="SOCCER_SCHEDULEModel.League">
+        <MappingFragment StoreEntitySet="League">
+          <ScalarProperty Name="LeagueID" ColumnName="LeagueID" />
+          <ScalarProperty Name="LeagueType" ColumnName="LeagueType" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="QualifiersRound" ColumnName="QualifiersRound" />
+          <ScalarProperty Name="CompentitionRound" ColumnName="CompentitionRound" />
+          <ScalarProperty Name="SemiFinalRound" ColumnName="SemiFinalRound" />
+          <ScalarProperty Name="FinalMatch" ColumnName="FinalMatch" />
+          <ScalarProperty Name="SubordinateMatch" ColumnName="SubordinateMatch" />
+          <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeagueTeams">
+      <EntityTypeMapping TypeName="SOCCER_SCHEDULEModel.LeagueTeam">
+        <MappingFragment StoreEntitySet="LeagueTeam">
+          <ScalarProperty Name="LeagueID" ColumnName="LeagueID" />
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Point" ColumnName="Point" />
+          <ScalarProperty Name="Won" ColumnName="Won" />
+          <ScalarProperty Name="Lost" ColumnName="Lost" />
+          <ScalarProperty Name="Drawn" ColumnName="Drawn" />
+          <ScalarProperty Name="GoalLostDiff" ColumnName="GoalLostDiff" />
+          <ScalarProperty Name="GoalsScored" ColumnName="GoalsScored" />
+          <ScalarProperty Name="GoalConceded" ColumnName="GoalConceded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lists">
+      <EntityTypeMapping TypeName="SOCCER_SCHEDULEModel.List">
+        <MappingFragment StoreEntitySet="List">
+          <ScalarProperty Name="ListID" ColumnName="ListID" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="SourceKeyID" ColumnName="SourceKeyID" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Matches">
+      <EntityTypeMapping TypeName="SOCCER_SCHEDULEModel.Match">
+        <MappingFragment StoreEntitySet="Match">
+          <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+          <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+          <ScalarProperty Name="LeagueID" ColumnName="LeagueID" />
+          <ScalarProperty Name="HomeTeamID" ColumnName="HomeTeamID" />
+          <ScalarProperty Name="GuestTeamID" ColumnName="GuestTeamID" />
+          <ScalarProperty Name="TVChannel" ColumnName="TVChannel" />
+          <ScalarProperty Name="OnlineChannel" ColumnName="OnlineChannel" />
+          <ScalarProperty Name="RoundID" ColumnName="RoundID" />
+          <ScalarProperty Name="StageID" ColumnName="StageID" />
+          <ScalarProperty Name="TimzeZone" ColumnName="TimzeZone" />
+          <ScalarProperty Name="HomeGoals" ColumnName="HomeGoals" />
+          <ScalarProperty Name="GuestGoals" ColumnName="GuestGoals" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stages">
+      <EntityTypeMapping TypeName="SOCCER_SCHEDULEModel.Stage">
+        <MappingFragment StoreEntitySet="Stage">
+          <ScalarProperty Name="StageID" ColumnName="StageID" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SOCCER_SCHEDULEModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teams">
+      <EntityTypeMapping TypeName="SOCCER_SCHEDULEModel.Team">
+        <MappingFragment StoreEntitySet="Team">
+          <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="SymbolIcon" ColumnName="SymbolIcon" />
+          <ScalarProperty Name="SymbolName" ColumnName="SymbolName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Match_GetList" FunctionName="SOCCER_SCHEDULEModel.Store.Match_GetList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SOCCER_SCHEDULEModel.Match_GetList_Result">
+          <ScalarProperty Name="LeagueID" ColumnName="LeagueID" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+          <ScalarProperty Name="HomeTeamName" ColumnName="HomeTeamName" />
+          <ScalarProperty Name="GuestTeamName" ColumnName="GuestTeamName" />
+          <ScalarProperty Name="HomeTeamID" ColumnName="HomeTeamID" />
+          <ScalarProperty Name="GuestTeamID" ColumnName="GuestTeamID" />
+          <ScalarProperty Name="HomeGoals" ColumnName="HomeGoals" />
+          <ScalarProperty Name="GuestGoals" ColumnName="GuestGoals" />
+          <ScalarProperty Name="RoundID" ColumnName="RoundID" />
+          <ScalarProperty Name="StageID" ColumnName="StageID" />
+          <ScalarProperty Name="TimzeZone" ColumnName="TimzeZone" />
+          <ScalarProperty Name="TVChannel" ColumnName="TVChannel" />
+          <ScalarProperty Name="OnlineChannel" ColumnName="OnlineChannel" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

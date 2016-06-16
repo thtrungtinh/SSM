@@ -1,0 +1,54 @@
+<div data-options="dxView : { name: 'LeagueTeamEdit', mode: 'edit', title: 'League team' } " >
+    <div data-bind="dxCommand: { onExecute: handleSave, id: 'save', title: 'Save', icon: 'save' } "></div>
+    <div data-bind="dxCommand: { onExecute: handleCancel, id: 'cancel', behavior: 'back', title: 'Cancel', icon: 'close' }" ></div>
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-edit-view dx-content-background dx-form-background" data-bind="dxDeferRendering: { showLoadIndicator: true, staggerItemSelector: '.dx-field', animation: 'edit-item-rendered', renderWhen: isReady }" >
+        <div data-bind="dxScrollView: { }">
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">League ID: </div>
+                    <div class="dx-field-value" data-bind="dxTextBox: { value: leagueteam.LeagueID, readOnly: true }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Team ID: </div>
+                    <div class="dx-field-value" data-bind="dxTextBox: { value: leagueteam.TeamID, readOnly: true }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Group ID: </div>
+                    <div class="dx-field-value" data-bind="dxTextBox: { value: leagueteam.GroupID, placeholder: 'Enter Group ID' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Rank: </div>
+                    <div class="dx-field-value" data-bind="dxNumberBox: { value: leagueteam.Rank, placeholder: 'Enter Rank' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Point: </div>
+                    <div class="dx-field-value" data-bind="dxNumberBox: { value: leagueteam.Point, placeholder: 'Enter Point' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Won: </div>
+                    <div class="dx-field-value" data-bind="dxNumberBox: { value: leagueteam.Won, placeholder: 'Enter Won' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Lost: </div>
+                    <div class="dx-field-value" data-bind="dxNumberBox: { value: leagueteam.Lost, placeholder: 'Enter Lost' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Drawn: </div>
+                    <div class="dx-field-value" data-bind="dxNumberBox: { value: leagueteam.Drawn, placeholder: 'Enter Drawn' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Goal lost diff: </div>
+                    <div class="dx-field-value" data-bind="dxNumberBox: { value: leagueteam.GoalLostDiff, placeholder: 'Enter Goal lost diff' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Goals scored: </div>
+                    <div class="dx-field-value" data-bind="dxNumberBox: { value: leagueteam.GoalsScored, placeholder: 'Enter Goals scored' }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Goal conceded: </div>
+                    <div class="dx-field-value" data-bind="dxNumberBox: { value: leagueteam.GoalConceded, placeholder: 'Enter Goal conceded' }"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

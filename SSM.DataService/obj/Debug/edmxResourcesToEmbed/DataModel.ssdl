@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SOCCER_SCHEDULEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Content">
+    <Key>
+      <PropertyRef Name="InfoID" />
+    </Key>
+    <Property Name="InfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateFrom" Type="datetime" Nullable="false" />
+    <Property Name="DateTo" Type="datetime" />
+    <Property Name="KeyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Destination" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HtmlContent" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LanguageID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="League">
+    <Key>
+      <PropertyRef Name="LeagueID" />
+    </Key>
+    <Property Name="LeagueID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LeagueType" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="CountryID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="QualifiersRound" Type="bit" Nullable="false" />
+    <Property Name="CompentitionRound" Type="bit" Nullable="false" />
+    <Property Name="SemiFinalRound" Type="bit" Nullable="false" />
+    <Property Name="FinalMatch" Type="bit" Nullable="false" />
+    <Property Name="SubordinateMatch" Type="bit" Nullable="false" />
+    <Property Name="TimeZone" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LeagueTeam">
+    <Key>
+      <PropertyRef Name="LeagueID" />
+      <PropertyRef Name="TeamID" />
+    </Key>
+    <Property Name="LeagueID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TeamID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GroupID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Rank" Type="smallint" Nullable="false" />
+    <Property Name="Point" Type="smallint" Nullable="false" />
+    <Property Name="Won" Type="smallint" Nullable="false" />
+    <Property Name="Lost" Type="smallint" Nullable="false" />
+    <Property Name="Drawn" Type="smallint" Nullable="false" />
+    <Property Name="GoalLostDiff" Type="smallint" Nullable="false" />
+    <Property Name="GoalsScored" Type="smallint" Nullable="false" />
+    <Property Name="GoalConceded" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="List">
+    <Key>
+      <PropertyRef Name="ListID" />
+    </Key>
+    <Property Name="ListID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderNo" Type="int" Nullable="false" />
+    <Property Name="SourceKeyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LanguageID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Source" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Match">
+    <Key>
+      <PropertyRef Name="MatchID" />
+    </Key>
+    <Property Name="MatchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ScheduleDate" Type="datetime" Nullable="false" />
+    <Property Name="LeagueID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="HomeTeamID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GuestTeamID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TVChannel" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="OnlineChannel" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="RoundID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StageID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimzeZone" Type="tinyint" Nullable="false" />
+    <Property Name="HomeGoals" Type="tinyint" />
+    <Property Name="GuestGoals" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Stage">
+    <Key>
+      <PropertyRef Name="StageID" />
+    </Key>
+    <Property Name="StageID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CountryID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProvinceID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="TeamID" />
+    </Key>
+    <Property Name="TeamID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CountryID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SymbolIcon" Type="varbinary(max)" />
+    <Property Name="SymbolName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Function Name="Match_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="GroupID" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="SOCCER_SCHEDULEModelStoreContainer">
+    <EntitySet Name="Content" EntityType="Self.Content" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="League" EntityType="Self.League" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LeagueTeam" EntityType="Self.LeagueTeam" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="List" EntityType="Self.List" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Match" EntityType="Self.Match" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stage" EntityType="Self.Stage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

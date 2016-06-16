@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SOCCER_SCHEDULEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Content">
+    <Key>
+      <PropertyRef Name="InfoID" />
+    </Key>
+    <Property Name="InfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateFrom" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateTo" Type="DateTime" Precision="3" />
+    <Property Name="KeyID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Destination" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HtmlContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LanguageID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="League">
+    <Key>
+      <PropertyRef Name="LeagueID" />
+    </Key>
+    <Property Name="LeagueID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LeagueType" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CountryID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="QualifiersRound" Type="Boolean" Nullable="false" />
+    <Property Name="CompentitionRound" Type="Boolean" Nullable="false" />
+    <Property Name="SemiFinalRound" Type="Boolean" Nullable="false" />
+    <Property Name="FinalMatch" Type="Boolean" Nullable="false" />
+    <Property Name="SubordinateMatch" Type="Boolean" Nullable="false" />
+    <Property Name="TimeZone" Type="Byte" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LeagueTeam">
+    <Key>
+      <PropertyRef Name="LeagueID" />
+      <PropertyRef Name="TeamID" />
+    </Key>
+    <Property Name="LeagueID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TeamID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GroupID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rank" Type="Int16" Nullable="false" />
+    <Property Name="Point" Type="Int16" Nullable="false" />
+    <Property Name="Won" Type="Int16" Nullable="false" />
+    <Property Name="Lost" Type="Int16" Nullable="false" />
+    <Property Name="Drawn" Type="Int16" Nullable="false" />
+    <Property Name="GoalLostDiff" Type="Int16" Nullable="false" />
+    <Property Name="GoalsScored" Type="Int16" Nullable="false" />
+    <Property Name="GoalConceded" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="List">
+    <Key>
+      <PropertyRef Name="ListID" />
+    </Key>
+    <Property Name="ListID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNo" Type="Int32" Nullable="false" />
+    <Property Name="SourceKeyID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LanguageID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Source" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Text" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Match">
+    <Key>
+      <PropertyRef Name="MatchID" />
+    </Key>
+    <Property Name="MatchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScheduleDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LeagueID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HomeTeamID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GuestTeamID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TVChannel" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OnlineChannel" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoundID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StageID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TimzeZone" Type="Byte" Nullable="false" />
+    <Property Name="HomeGoals" Type="Byte" />
+    <Property Name="GuestGoals" Type="Byte" />
+  </EntityType>
+  <EntityType Name="Stage">
+    <Key>
+      <PropertyRef Name="StageID" />
+    </Key>
+    <Property Name="StageID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProvinceID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="TeamID" />
+    </Key>
+    <Property Name="TeamID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SymbolIcon" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="SymbolName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SOCCER_SCHEDULEEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Contents" EntityType="Self.Content" />
+    <EntitySet Name="Leagues" EntityType="Self.League" />
+    <EntitySet Name="LeagueTeams" EntityType="Self.LeagueTeam" />
+    <EntitySet Name="Lists" EntityType="Self.List" />
+    <EntitySet Name="Matches" EntityType="Self.Match" />
+    <EntitySet Name="Stages" EntityType="Self.Stage" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Teams" EntityType="Self.Team" />
+    <FunctionImport Name="Match_GetList" ReturnType="Collection(SOCCER_SCHEDULEModel.Match_GetList_Result)">
+      <Parameter Name="GroupID" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="Match_GetList_Result">
+    <Property Type="String" Name="LeagueID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="GroupID" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ScheduleDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="HomeTeamName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="GuestTeamName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="HomeTeamID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="GuestTeamID" Nullable="false" MaxLength="50" />
+    <Property Type="Byte" Name="HomeGoals" Nullable="true" />
+    <Property Type="Byte" Name="GuestGoals" Nullable="true" />
+    <Property Type="String" Name="RoundID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="StageID" Nullable="false" MaxLength="50" />
+    <Property Type="Byte" Name="TimzeZone" Nullable="false" />
+    <Property Type="String" Name="TVChannel" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="OnlineChannel" Nullable="false" MaxLength="250" />
+  </ComplexType>
+</Schema>
